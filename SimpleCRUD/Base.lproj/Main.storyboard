@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="SimpleCRUD" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,8 +16,81 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lae-TV-42d">
+                                <rect key="frame" x="16" y="28" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Allowance" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nQ3-pq-m7s">
+                                <rect key="frame" x="16" y="76" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qz6-hA-97c">
+                                <rect key="frame" x="19" y="228" width="46" height="30"/>
+                                <state key="normal" title="Create">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onCreate:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="kHI-s1-e61"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zrn-Pu-Q9m">
+                                <rect key="frame" x="19" y="266" width="36" height="30"/>
+                                <state key="normal" title="Read">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onRead:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Bxz-tM-gvt"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xm3-pf-nUp">
+                                <rect key="frame" x="19" y="304" width="51" height="30"/>
+                                <state key="normal" title="Update">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onUpdate:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="WjB-Le-XKs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LFE-Mb-zTc">
+                                <rect key="frame" x="19" y="342" width="44" height="30"/>
+                                <state key="normal" title="Delete">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onDelete:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Ysj-Pa-GDE"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zaI-P7-LEh">
+                                <rect key="frame" x="19" y="128" width="565" height="68"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="68" id="NFx-vK-T4T"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zaI-P7-LEh" firstAttribute="top" secondItem="nQ3-pq-m7s" secondAttribute="bottom" constant="22" id="5yj-66-psL"/>
+                            <constraint firstItem="Qz6-hA-97c" firstAttribute="top" secondItem="zaI-P7-LEh" secondAttribute="bottom" constant="32" id="QH6-Jh-ew8"/>
+                            <constraint firstItem="zaI-P7-LEh" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="128" id="QUV-5i-5Vm"/>
+                            <constraint firstItem="zaI-P7-LEh" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="RFP-Yb-5Zr"/>
+                            <constraint firstItem="zaI-P7-LEh" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="3" id="UQd-T5-zbW"/>
+                            <constraint firstItem="zaI-P7-LEh" firstAttribute="leading" secondItem="Qz6-hA-97c" secondAttribute="leading" id="WDi-mj-qBu"/>
+                            <constraint firstItem="zaI-P7-LEh" firstAttribute="leading" secondItem="LFE-Mb-zTc" secondAttribute="leading" id="YNf-7w-waq"/>
+                            <constraint firstItem="zaI-P7-LEh" firstAttribute="leading" secondItem="Zrn-Pu-Q9m" secondAttribute="leading" id="Ypp-Cb-o5J"/>
+                            <constraint firstItem="zaI-P7-LEh" firstAttribute="leading" secondItem="xm3-pf-nUp" secondAttribute="leading" id="pEw-cm-VOz"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="allowance" destination="nQ3-pq-m7s" id="HDJ-bW-REf"/>
+                        <outlet property="name" destination="Lae-TV-42d" id="rEl-ZW-O8n"/>
+                        <outlet property="status" destination="zaI-P7-LEh" id="v2c-2l-ynH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

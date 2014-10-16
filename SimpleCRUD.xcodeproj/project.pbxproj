@@ -14,6 +14,7 @@
 		F9569CFF19E5AFFC00DBBB43 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9569CFE19E5AFFC00DBBB43 /* Images.xcassets */; };
 		F9569D0219E5AFFC00DBBB43 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9569D0019E5AFFC00DBBB43 /* LaunchScreen.xib */; };
 		F9569D0E19E5AFFC00DBBB43 /* SimpleCRUDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9569D0D19E5AFFC00DBBB43 /* SimpleCRUDTests.swift */; };
+		F9569D1819E5B2A100DBBB43 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9569D1719E5B2A100DBBB43 /* Person.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		F9569D0719E5AFFC00DBBB43 /* SimpleCRUDTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleCRUDTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9569D0C19E5AFFC00DBBB43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9569D0D19E5AFFC00DBBB43 /* SimpleCRUDTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCRUDTests.swift; sourceTree = "<group>"; };
+		F9569D1719E5B2A100DBBB43 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				F9569CFE19E5AFFC00DBBB43 /* Images.xcassets */,
 				F9569D0019E5AFFC00DBBB43 /* LaunchScreen.xib */,
 				F9569CF619E5AFFC00DBBB43 /* SimpleCRUD.xcdatamodeld */,
+				F9569D1719E5B2A100DBBB43 /* Person.swift */,
 				F9569CF219E5AFFC00DBBB43 /* Supporting Files */,
 			);
 			path = SimpleCRUD;
@@ -217,6 +220,7 @@
 			files = (
 				F9569CFA19E5AFFC00DBBB43 /* ViewController.swift in Sources */,
 				F9569CF519E5AFFC00DBBB43 /* AppDelegate.swift in Sources */,
+				F9569D1819E5B2A100DBBB43 /* Person.swift in Sources */,
 				F9569CF819E5AFFC00DBBB43 /* SimpleCRUD.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
